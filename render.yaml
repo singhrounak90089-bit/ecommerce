@@ -6,9 +6,9 @@ services:
     healthCheckPath: /
     envVars:
       - key: DB_URL
-        sync: false
+        value: jdbc:mysql://sql.freedb.tech:3306/freedb_fpbA0yYH?useSSL=true&allowPublicKeyRetrieval=true
       - key: DB_USERNAME
-        sync: false
+        value: u_CVou9S
       - key: DB_PASSWORD
         sync: false
       - key: HIBERNATE_DDL_AUTO
