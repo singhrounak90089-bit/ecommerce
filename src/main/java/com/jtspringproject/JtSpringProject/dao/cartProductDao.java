@@ -2,6 +2,8 @@ package com.jtspringproject.JtSpringProject.dao;
 
 import java.util.Collections;
 import java.util.List;
+import javax.persistence.NoResultException;
+import com.jtspringproject.JtSpringProject.models.Cart;
 
 import com.jtspringproject.JtSpringProject.models.CartProduct;
 import com.jtspringproject.JtSpringProject.models.Product;
@@ -27,6 +29,27 @@ public class cartProductDao {
     @Transactional
     public List<CartProduct> getCartProducts() {
         return this.sessionFactory.getCurrentSession().createQuery("from CART_PRODUCT", CartProduct.class).list();
+    }
+
+    @Transactional
+    public List<CartProduct> getCartProducts(Cart cart) {
+        return this.sessionFactory.getCurrentSession()
+                .createQuery("select cp from CartProduct cp join fetch cp.product p left join fetch p.category where cp.cart.id = :cartId", CartProduct.class)
+                .setParameter("cartId", cart.getId())
+                .list();
+    }
+
+    @Transactional
+    public CartProduct getCartProduct(Cart cart, Product product) {
+        try {
+            return this.sessionFactory.getCurrentSession()
+                    .createQuery("from CartProduct cp where cp.cart.id = :cartId and cp.product.id = :productId", CartProduct.class)
+                    .setParameter("cartId", cart.getId())
+                    .setParameter("productId", product.getId())
+                    .getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
     }
 
     @Transactional

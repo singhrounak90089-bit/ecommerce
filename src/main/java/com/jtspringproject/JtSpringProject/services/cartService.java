@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.jtspringproject.JtSpringProject.dao.cartDao;
 import com.jtspringproject.JtSpringProject.models.Cart;
+import com.jtspringproject.JtSpringProject.models.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,16 @@ public class cartService {
 
     public Cart addCart(Cart cart) {
         return cartDao.addCart(cart);
+    }
+
+    public Cart getOrCreateCart(User customer) {
+        Cart cart = cartDao.getCartByCustomer(customer);
+        if (cart != null) {
+            return cart;
+        }
+        Cart newCart = new Cart();
+        newCart.setCustomer(customer);
+        return cartDao.addCart(newCart);
     }
 
     public List<Cart> getCarts() {
