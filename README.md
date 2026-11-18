@@ -85,6 +85,18 @@ pom.xml
 
 ## Getting Started
 
+## Deploy on Render
+
+This repository includes a `render.yaml` Blueprint and a multi-stage `Dockerfile`. In Render, create a Blueprint from this repository and provide these environment variables for a reachable MySQL-compatible database:
+
+- `DB_URL`: JDBC URL, for example `jdbc:mysql://DB_HOST:3306/DATABASE?useSSL=true&allowPublicKeyRetrieval=true`
+- `DB_USERNAME`: database username
+- `DB_PASSWORD`: database password
+
+Render supplies `PORT` automatically. The app uses it for its HTTP listener. The default `HIBERNATE_DDL_AUTO=update` creates or updates tables at startup; set this to `validate` after managing schema migrations yourself. The app needs an external MySQL or MariaDB service; Render's PostgreSQL database is not compatible with this application's MySQL driver and schema.
+
+The included `basedata.sql` is optional and must be imported into the configured database separately if you want the sample records.
+
 ### Prerequisites
 
 - Java 11+

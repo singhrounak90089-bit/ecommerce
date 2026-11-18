@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: ecommerce-springboot
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: HIBERNATE_DDL_AUTO
+        value: update
+      - key: HIBERNATE_SHOW_SQL
+        value: "false"
