@@ -4,18 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f8f8f2">
+    <meta name="theme-color" content="#f5f7f1">
     <meta name="description" content="Fresh picks and everyday pantry favourites from Perishable Shop.">
     <title>Perishable Shop | Fresh picks for your table</title>
     <style>
         :root {
-            --ink: #1e2c22;
-            --muted: #69736a;
-            --green: #285b3c;
-            --green-dark: #1c432c;
-            --lime: #d9ed9b;
-            --cream: #f8f8f2;
-            --line: #e7e9df;
+            --ink: #26352a;
+            --muted: #6d776d;
+            --green: #42634a;
+            --green-dark: #304b37;
+            --cream: #f5f7f1;
+            --line: #e4e9df;
             --white: #fff;
         }
 
@@ -46,20 +45,20 @@
         .button-light { background: white; color: var(--ink); box-shadow: 0 8px 24px rgba(32,54,37,.08); }
         .button-light:hover { background: #f4f7ee; }
         .hero-wrap { padding: 36px 20px 26px; }
-        .hero { position: relative; overflow: hidden; width: min(1160px, 100%); min-height: 408px; margin: auto; border-radius: 28px; background: #dcebd3; display: grid; grid-template-columns: 1.04fr .96fr; }
+        .hero { position: relative; overflow: hidden; width: min(1160px, 100%); min-height: 408px; margin: auto; border-radius: 28px; background: #e3eade; display: grid; grid-template-columns: 1.04fr .96fr; }
         .hero-copy { position: relative; z-index: 1; padding: clamp(36px, 6vw, 76px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
         .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
         .eyebrow-dot { width: 7px; height: 7px; background: #80a94c; border-radius: 50%; }
         h1 { max-width: 490px; margin: 18px 0 14px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(42px, 5.7vw, 68px); font-weight: 500; line-height: .99; letter-spacing: -.055em; }
         .hero-copy p { max-width: 410px; margin: 0 0 25px; color: #50634f; font-size: 16px; line-height: 1.7; }
         .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; }
-        .hero-visual { min-height: 408px; background: linear-gradient(90deg, rgba(220,235,211,.08), rgba(29,56,31,.05)), url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=85") center/cover; }
+        .hero-visual { min-height: 408px; background-color: #cad8c4; background-image: url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=85"); background-position: center; background-size: cover; background-blend-mode: luminosity; }
         .hero-note { position: absolute; right: 24px; bottom: 24px; padding: 13px 16px; border-radius: 14px; background: rgba(255,255,255,.93); box-shadow: 0 10px 28px rgba(28,50,30,.12); font-size: 12px; font-weight: 700; }
         .hero-note span { display: block; margin-top: 3px; color: var(--muted); font-weight: 500; }
         .benefits { width: min(1060px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); padding: 18px 0 37px; }
         .benefit { display: flex; align-items: center; justify-content: center; gap: 11px; padding: 8px 14px; color: #526252; font-size: 13px; }
         .benefit + .benefit { border-left: 1px solid #dfe4d7; }
-        .benefit-icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #e9efdd; color: var(--green); font-size: 16px; }
+        .benefit-icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #e6ecdf; color: var(--green); font-size: 16px; }
         .benefit strong { display: block; color: var(--ink); font-size: 13px; }
         .catalog { width: min(1160px, calc(100% - 40px)); margin: 0 auto; padding: 20px 0 84px; }
         .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 25px; }
@@ -91,7 +90,7 @@
         .shop-link:hover { color: var(--green-dark); }
         .empty { grid-column: 1/-1; border: 1px dashed #d6dccd; border-radius: 18px; padding: 40px; color: var(--muted); text-align: center; background: rgba(255,255,255,.6); }
         .empty h3 { margin: 0 0 8px; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: 24px; font-weight: 500; }
-        .site-footer { border-top: 1px solid var(--line); background: #f1f2e9; }
+        .site-footer { border-top: 1px solid var(--line); background: #edf1e8; }
         .footer-inner { width: min(1160px, calc(100% - 40px)); min-height: 86px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #6d776e; font-size: 12px; }
         .footer-brand { color: var(--ink); font-weight: 800; }
         [hidden] { display: none !important; }
